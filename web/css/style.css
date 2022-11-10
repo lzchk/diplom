@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700&display=swap');
+
+body{
+    padding: 0;
+    margin: 0 auto;
+    font-family: 'Nunito';
+    background-color: #F8F9FA;
+}
+
+body.lock{
+    overflow: hidden;
+}
+
+a{
+    text-decoration: none;
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-column{
+    display: flex;
+    flex-direction: column;
+}
+
+.cursor{
+    cursor: pointer;
+}
+
+.wrapper{
+    display: grid;
+    grid-template-columns: 15.63vw 84.38vw;
+}
+
+/*side-menu*/
+
+.side-menu{
+    float: left;
+    background-color: #2358C2;
+    width: 15.63vw;
+    color: white;
+    position: fixed;
+    height: 100%;
+}
+
+.logo{
+    display: flex;
+    justify-content: center;
+    margin-top: 3.13vw;
+}
+
+.logo img{
+    width: 9.58vw;
+}
+
+.account{
+    margin: 30% 28% 20% 28%;
+    text-align: center;
+}
+
+.account_name{
+    font-size: 1.15vw;
+    margin-top: 3%;
+}
+
+.menu{
+    margin-top: 22%;
+}
+
+.menu-item{
+    padding-left: 15%;
+    font-size: 1.25vw;
+    align-items: center;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.menu-item:hover {
+    background-color: #4B87FF;
+    width: 70%;
+    height: 20%;
+    transition: .8s;
+}
+
+.menu-item_text{
+    margin-left: 5%;
+    font-size: 0.9vw;
+}
+
+.menu-item_img{
+    width: 1vw;
+    height: 1vw;
+}
+
+.exit{
+    position: absolute;
+    bottom: 0;
+    left: 5.4vw;
+    margin-bottom: 3vw;
+}
+
+.exit_text{
+    font-size: 0.9vw;
+    margin-left: 0.5vw;
+}
+
+.exit_img{
+    height: 1vw;
+}
+
+/*account*/
+
+.container{
+    margin: 2.60vw;
+}
+
+.user-account{
+    width: 62.5vw;
+    height: 17.71vw;
+    background: white;
+    border-radius: 8px;
+}
+
+.user-header{
+    height: 5vw;
+    display: flex;
+    align-items: center;
+    padding-left: 2.6vw;
+    font-size: 1.4vw;
+    font-weight: 900;
+    box-shadow: 0px 6px 58px rgb(231 231 231 / 45%);
+}
+
+.user{
+    height: 13.13vw;
+    display: flex;
+    align-items: center;
+}
+
+.user_info img{
+    width: 8.85vw;
+    margin-left: 2.6vw;
+    margin-right: 2.6vw;
+}
+
+.user-info{
+    justify-content: center;
+}
+
+.user_group{
+    font-size: 0.83vw;
+    background: #4184F4;
+    color: white;
+    width: 3.75vw;
+    height: 1.56vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    margin-bottom: 0.68vw;
+}
+
+.user_name,.user_status{
+    font-size: 1vw;
+    font-weight: 600;
+    margin-bottom: 1vh;
+}
