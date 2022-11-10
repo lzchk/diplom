@@ -79,7 +79,10 @@ AppAsset::register($this);
     </div>
 
     <div class="container">
-        <div class="row">
+        <div class="title">
+            Профиль
+        </div>
+        <div class="flex-row space-between">
             <div class="user-account">
                 <div class="user-header">
                     <?php
@@ -124,24 +127,73 @@ AppAsset::register($this);
                     </div>
 
                     <div class="account_edit">
-
+                        <button class="edit">Редактировать</button><br>
+                        <button class="theme">Изменить тему</button>
                     </div>
                 </div>
             </div>
 
             <div class="learning-progress">
+                <?php
+                function date_progress($start, $end, $date = null) {
+                    $date = $date ?: time();
+                    return (($date - $start) / ($end - $start)) * 100;
+                }
+
+                $start   = strtotime("2022-09-01");
+                $end     = strtotime("2023-06-30");
+                $now = date("Y-m-d");
+                $today =strtotime($now);
+
+                $total_days = ($end - $start)/(60 * 60 * 24);
+                $past_day = ($today - $start)/(60 * 60 * 24);
+                $days_left = $total_days - $past_day;
+                $percent = 100 * $past_day / $total_days;
+
+                $result = round($percent, 0);
+                ?>
+                <div class="circle">
+                    <div class="pie" style="--p:<?= $result ?>;--b:1.4vw;--c:#4184F4; top: -1.4vw;left: -1.3vw;">
+                        <?= $result ?>%
+                    </div>
+<!--                    <div class="days flex-row">-->
+<!--                        <div class="point"></div>-->
+<!--                        <div>пройдено: --><?//= $past_day ?><!-- дней</div>-->
+<!--                    </div>-->
+<!--                    <hr>-->
+                    <div class="days flex-row">
+                        <div class="point"></div>
+                        Осталось: <?= $days_left ?> дней
+                    </div>
+                </div>
+
 
             </div>
         </div>
 
-        <div class="row">
+        <div class="flex-row space-between" style="margin-top: 2.6vw;">
             <div class="calendar">
-                <div class="indicator">
+                <div class="indicators flex-row">
+                    <div class="indicator flex-row">
+                        <div class="weekend"></div>
+                        Выходной день
+                    </div>
 
+                    <div class="indicator flex-row">
+                        <div class="sdo"></div>
+                        СДО
+                    </div>
+
+                    <div class="indicator flex-row">
+                        <div class="study"></div>
+                        Учебный день
+                    </div>
                 </div>
 
                 <div class="calendar-content">
+                    <?php
 
+                    ?>
                 </div>
             </div>
 

@@ -11,7 +11,12 @@ body.lock{
     overflow: hidden;
 }
 
+button{
+    cursor: pointer;
+}
+
 a{
+    cursor: pointer;
     text-decoration: none;
 }
 
@@ -23,6 +28,10 @@ a{
 .flex-column{
     display: flex;
     flex-direction: column;
+}
+
+.space-between{
+    justify-content: space-between;
 }
 
 .cursor{
@@ -111,9 +120,18 @@ a{
 }
 
 /*account*/
+.title{
+    font-size: 1.67vw;
+    font-weight: 900;
+    margin-bottom: 1.56vw;
+}
 
 .container{
     margin: 2.60vw;
+}
+
+.user{
+    justify-content: space-between;
 }
 
 .user-account{
@@ -164,6 +182,126 @@ a{
 
 .user_name,.user_status{
     font-size: 1vw;
-    font-weight: 600;
+    font-weight: 700;
     margin-bottom: 1vh;
+}
+
+.account_edit{
+    margin-right: 2.6vw;
+}
+
+.account_edit button{
+    width: 13.54vw;
+    height: 2.08vw;
+    font-size: 0.75vw;
+    font-weight: 700;
+    box-shadow: 0px 3px 10px rgba(154, 154, 154, 0.25);
+    border-radius: 27px;
+    border: none;
+}
+
+.edit{
+    background: #F7F8FA;
+    margin-bottom: 1.25vw;
+}
+
+.edit:hover{
+    background: #f0f5ff;
+}
+
+.theme{
+    background: white;
+}
+
+.theme:hover{
+    background: #eeeeee;
+}
+
+.learning-progress{
+    width: 14vw;
+    height: 17.71vw;
+    background: white;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+}
+
+.pie {
+    --w: 11vw;
+    width: var(--w);
+    aspect-ratio: 1;
+    position: relative;
+    display: inline-grid;
+    place-content: center;
+    font-size: 1.8vw;
+    font-weight: bold;
+}
+
+.pie:before {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    inset: 0;
+    background: conic-gradient(var(--c) calc(var(--p)*1%),#0000 0);
+    -webkit-mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+    mask:radial-gradient(farthest-side,#0000 calc(99% - var(--b)),#000 calc(100% - var(--b)));
+}
+
+.circle {
+    margin-top: 2.3vh;
+    border: 1.4vw solid #DCEAFF;
+    border-radius: 50%;
+    height: 8.33vw;
+    width: 8.33vw;
+}
+
+.point{
+    background: #4184F4;
+    border-radius: 5px;
+    width: 0.47vw;
+    height: 0.47vw;
+    margin-right: 0.73vw;
+}
+
+.days{
+    align-items: center;
+    font-size: 0.9vw;
+    width: 10vw;
+    margin-bottom: 1vh;
+    position: relative;
+    left: -1vw;
+}
+
+.indicators{
+    width: 26.04vw;
+    height: 3.13vw;
+    background: white;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.indicator{
+    font-size: 0.94vw;
+    align-items: center;
+}
+
+.weekend, .sdo, .study{
+    width: 1.35vw;
+    height: 1.35vw;
+    border-radius: 50%;
+    margin-right: 0.5vw;
+}
+
+.weekend{
+    background: #4184F4;
+}
+
+.sdo{
+    background: #DCEAFF;
+}
+
+.study{
+    background: #FFFFFF;
+    border: 2px solid #D6D6D6;
 }
