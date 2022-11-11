@@ -2,6 +2,7 @@
 
 namespace app\controllers;
 
+use app\models\Calendar;
 use Yii;
 use yii\filters\AccessControl;
 use yii\web\Controller;
@@ -124,5 +125,11 @@ class SiteController extends Controller
     public function actionAbout()
     {
         return $this->render('about');
+    }
+
+    public function actionProfile()
+    {
+        $calendarString = Calendar::getMonth(date('n'), date('Y'), Calendar::$events);
+        return $this->render('profile', ['calendarString' => $calendarString]);
     }
 }

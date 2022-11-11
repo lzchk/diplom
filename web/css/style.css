@@ -5,6 +5,7 @@ body{
     margin: 0 auto;
     font-family: 'Nunito';
     background-color: #F8F9FA;
+    color: #000833;
 }
 
 body.lock{
@@ -88,8 +89,8 @@ a{
 
 .menu-item:hover {
     background-color: #4B87FF;
-    width: 70%;
-    height: 20%;
+    width: 20.83vw;
+    height: 3.65vw;
     transition: .8s;
 }
 
@@ -289,7 +290,7 @@ a{
 .weekend, .sdo, .study{
     width: 1.35vw;
     height: 1.35vw;
-    border-radius: 50%;
+    border-radius: 10px;
     margin-right: 0.5vw;
 }
 
@@ -304,4 +305,89 @@ a{
 .study{
     background: #FFFFFF;
     border: 2px solid #D6D6D6;
+}
+
+.calendar-content{
+    margin-top: 1.04vw;
+    height: 15.63vw;
+    background: white;
+}
+
+.calendar-item {
+    width: 26.04vw;
+    height: 17vw;
+    background: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.calendar-head {
+    text-align: center;
+    padding: 0.73vw;
+    font-weight: 700;
+    font-size: 1.25vw;
+}
+.calendar-item table {
+    /*border-collapse: collapse;*/
+    width: 23vw;
+    margin: 0 auto;
+}
+.calendar-item th {
+    font-size: 0.94vw;
+    text-align: center;
+    font-weight: bold;
+}
+.calendar-item td {
+    font-size: 0.73vw;
+    padding: 0.63vw;
+    text-align: center;
+    /* background: black; */
+    border-radius: 100px;
+    justify-content: space-between;
+}
+/*.calendar-item tr th:nth-child(6), .calendar-item tr th:nth-child(7),*/
+/*.calendar-item tr td:nth-child(6), .calendar-item tr td:nth-child(7)  {*/
+/*    color: #e65a5a;*/
+/*}*/
+.calendar-day.last {
+    color: #999 !important;
+}
+.calendar-day.day-off {
+    color: #999 !important;
+}
+.calendar-day.today {
+    font-weight: bold;
+}
+.calendar-day.event {
+    background: #ffe2ad;
+    position: relative;
+    cursor: pointer;
+}
+.calendar-day.event:hover .calendar-popup {
+    display: block;
+}
+.calendar-popup {
+    display: none;
+    position: absolute;
+    top: 40px;
+    left: 0;
+    min-width: 200px;
+    padding: 15px;
+    background: #fff;
+    text-align: left;
+    font-size: 13px;
+    z-index: 100;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    color: #000;
+}
+.calendar-popup:before {
+    content: "";
+    border: solid transparent;
+    position: absolute;
+    left: 8px;
+    bottom: 100%;
+    border-bottom-color: #fff;
+    border-width: 9px;
+    margin-left: 0;
 }
