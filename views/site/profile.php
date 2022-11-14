@@ -2,6 +2,8 @@
 /**
  * @var $calendarString Calendar::getMonth string
  */
+
+require_once ('../models/Schedule.php');
 ?>
 
 
@@ -95,10 +97,7 @@
                 Осталось: <?= $days_left ?> дней
             </div>
         </div>
-
-
     </div>
-
 </div>
 
 
@@ -125,40 +124,37 @@
             <?= $calendarString ?>
         </div>
     </div>
+            <?=  $this->render('_profile_calendar',[
+                'calendarString' => $calendarString,
+                'schedule' => $schedule,
+                'month' => $month,
+                'dayOfTheWeek' => $dayOfTheWeek,
+                'dayOfTheMonth' => $dayOfTheMonth,
+            ])
+            ?>
 
-    <div class="schedule">
-        <?php
-        // API ключ
-        $apiKey = "fe57b721fd47b8600afac45a7829c1ea";
-        // Город погода которого нужна
-        $city = "Moscow";
-        // Ссылка для отправки
-        $url = "http://api.openweathermap.org/data/2.5/weather?q=" . $city . "&lang=ru&units=metric&appid=" . $apiKey;
-        // Создаём запрос
-        $ch = curl_init();
 
-        // Настройка запроса
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_URL, $url);
+<div class="row">
+    <div class="">
 
-        // Отправляем запрос и получаем ответ
-        $data = json_decode(curl_exec($ch));
+    </div>
 
-        // Закрываем запрос
-        curl_close($ch);
-        ?>
-        <div class="weather">
-            <h2>Погода в городе <?php echo $data->name; ?></h2>
-            <p>Погода: <?php echo $data->main->temp_min; ?>°C</p>
-            <p>Влажность: <?php echo $data->main->humidity; ?> %</p>
-            <p>Ветер: <?php echo $data->wind->speed; ?> км/ч</p>
+    <div class="buildings">
+        <div class="buildings_name">Корпуса</div>
+        <div class="flex-row">
+            <div class="buildings_left">
+                <div class="buildings_number">1 - </div>
+                <div class="buildings"></div>
+            </div>
+
+            <div class="buildings_right">
+
+            </div>
         </div>
     </div>
 
-    <div class="time-schedule"></div>
+    <div class="Saturday's-time-schedule">
 
-</div>
-
-<div class="row">
+    </div>
 </div>
 

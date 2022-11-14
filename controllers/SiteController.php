@@ -3,7 +3,9 @@
 namespace app\controllers;
 
 use app\models\Calendar;
+use app\models\Schedule;
 use Yii;
+use yii\db\Expression;
 use yii\filters\AccessControl;
 use yii\web\Controller;
 use yii\web\Response;
@@ -129,7 +131,19 @@ class SiteController extends Controller
 
     public function actionProfile()
     {
+        $schedule = Schedule::find()->where(['speciality_id' => 1] )->andWhere(['date' => new Expression('CURDATE()')])->all();
         $calendarString = Calendar::getMonth(date('n'), date('Y'), Calendar::$events);
-        return $this->render('profile', ['calendarString' => $calendarString]);
+        $monthArr = Calendar::$months;
+        $weekArr = Calendar::$week;
+        $dayOfTheWeek = Calendar::$week[date('w')];
+        $dayOfTheMonth = Calendar::$months[date('m')];
+        //date("Y-m-d")
+        return $this->render('profile', [
+            'calendarString' => $calendarString,
+            'schedule' => $schedule,
+            'month' => $monthArr,
+            'dayOfTheWeek' => $dayOfTheWeek,
+            'dayOfTheMonth' => $dayOfTheMonth,
+        ]);
     }
 }

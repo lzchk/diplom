@@ -17,7 +17,7 @@ use Yii;
  * @property int $num_lesson
  * @property int $week_num
  *
- * @property DiscipHasSpeciality $discipline
+ * @property Discipline $discipline
  * @property Room $room
  * @property Specialty $speciality
  * @property Teacher $teacher
@@ -42,7 +42,7 @@ class Schedule extends \yii\db\ActiveRecord
             [['discipline_id', 'speciality_id', 'room_id', 'teacher_id', 'num_lesson', 'week_num'], 'integer'],
             [['date'], 'safe'],
             [['is_online'], 'string', 'max' => 30],
-            [['discipline_id'], 'exist', 'skipOnError' => true, 'targetClass' => DiscipHasSpeciality::class, 'targetAttribute' => ['discipline_id' => 'id']],
+            [['discipline_id'], 'exist', 'skipOnError' => true, 'targetClass' => Discipline::class, 'targetAttribute' => ['discipline_id' => 'id']],
             [['room_id'], 'exist', 'skipOnError' => true, 'targetClass' => Room::class, 'targetAttribute' => ['room_id' => 'id']],
             [['speciality_id'], 'exist', 'skipOnError' => true, 'targetClass' => Specialty::class, 'targetAttribute' => ['speciality_id' => 'id']],
             [['teacher_id'], 'exist', 'skipOnError' => true, 'targetClass' => Teacher::class, 'targetAttribute' => ['teacher_id' => 'id']],
@@ -74,7 +74,7 @@ class Schedule extends \yii\db\ActiveRecord
      */
     public function getDiscipline()
     {
-        return $this->hasOne(DiscipHasSpeciality::class, ['id' => 'discipline_id']);
+        return $this->hasOne(Discipline::class, ['id' => 'discipline_id']);
     }
 
     /**

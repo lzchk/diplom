@@ -4,7 +4,7 @@ body{
     padding: 0;
     margin: 0 auto;
     font-family: 'Nunito';
-    background-color: #F8F9FA;
+    background-color: #EAEFF5;
     color: #000833;
 }
 
@@ -342,25 +342,22 @@ a{
     font-size: 0.73vw;
     padding: 0.63vw;
     text-align: center;
-    /* background: black; */
     border-radius: 100px;
     justify-content: space-between;
 }
-/*.calendar-item tr th:nth-child(6), .calendar-item tr th:nth-child(7),*/
-/*.calendar-item tr td:nth-child(6), .calendar-item tr td:nth-child(7)  {*/
-/*    color: #e65a5a;*/
-/*}*/
+
 .calendar-day.last {
     color: #999 !important;
 }
 .calendar-day.day-off {
-    color: #999 !important;
+    color: #FFFFFF !important;
+    background: #4184F4;
 }
 .calendar-day.today {
     font-weight: bold;
 }
 .calendar-day.event {
-    background: #ffe2ad;
+    background: #DCEAFF;
     position: relative;
     cursor: pointer;
 }
@@ -390,4 +387,30 @@ a{
     border-bottom-color: #fff;
     border-width: 9px;
     margin-left: 0;
+}
+
+.weather{
+    background: linear-gradient(to right, #2358C2, #4184F4);
+    width: 26.04vw;
+    height: 3.02vw;
+    align-items: center;
+    color: white;
+    border-radius: 5px;
+    justify-content: space-between;
+}
+
+.weather_name{
+    margin-left: 0.94vw;
+}
+
+.weather_temp{
+    display: flex;
+    align-items: center;
+    margin-right: 0.94vw;
+    font-size: 1.3vw;
+}
+
+.weather_temp img{
+    width: 2.6vw;
+    margin-left: 1vw;
 }
