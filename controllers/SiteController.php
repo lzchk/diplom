@@ -4,6 +4,7 @@ namespace app\controllers;
 
 use app\models\Calendar;
 use app\models\Schedule;
+use app\models\Work;
 use Yii;
 use yii\db\Expression;
 use yii\filters\AccessControl;
@@ -131,9 +132,13 @@ class SiteController extends Controller
 
     public function actionProfile()
     {
+
+
+
         $schedule = Schedule::find()->where(['speciality_id' => 1] )->andWhere(['date' => new Expression('CURDATE()')])->all();
         $calendarString = Calendar::getMonth(date('n'), date('Y'), Calendar::$events);
         $monthArr = Calendar::$months;
+        $deadlineWork = Work::find()->where('date_by > NOW()')->orderBy("date_by")->one();
         $weekArr = Calendar::$week;
         $dayOfTheWeek = Calendar::$week[date('w')];
         $dayOfTheMonth = Calendar::$months[date('m')];
@@ -144,6 +149,7 @@ class SiteController extends Controller
             'month' => $monthArr,
             'dayOfTheWeek' => $dayOfTheWeek,
             'dayOfTheMonth' => $dayOfTheMonth,
+            'deadlineWork' => $deadlineWork
         ]);
     }
 }

@@ -1,4 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@500;600;700&display=swap');
+*{
+    box-sizing: border-box;
+}
 
 body{
     padding: 0;
@@ -128,7 +131,7 @@ a{
 }
 
 .container{
-    margin: 2.60vw;
+    margin: 2.5vw 6.15vw;
 }
 
 .user{
@@ -136,7 +139,7 @@ a{
 }
 
 .user-account{
-    width: 62.5vw;
+    width: 54.69vw;
     height: 17.71vw;
     background: white;
     border-radius: 8px;
@@ -164,8 +167,12 @@ a{
     margin-right: 2.6vw;
 }
 
-.user-info{
+.user-info, .user-data{
     justify-content: center;
+}
+
+.user-right{
+    margin-left: 3vw;
 }
 
 .user_group{
@@ -181,10 +188,14 @@ a{
     margin-bottom: 0.68vw;
 }
 
-.user_name,.user_status{
+.user_name,.user_data{
     font-size: 1vw;
     font-weight: 700;
     margin-bottom: 1vh;
+}
+
+.user_data{
+    color: #434343;
 }
 
 .account_edit{
@@ -225,10 +236,11 @@ a{
     border-radius: 8px;
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 
 .pie {
-    --w: 11vw;
+    --w: 8.33vw;;
     width: var(--w);
     aspect-ratio: 1;
     position: relative;
@@ -269,8 +281,13 @@ a{
     font-size: 0.9vw;
     width: 10vw;
     margin-bottom: 1vh;
-    position: relative;
-    left: -1vw;
+    margin-top: 1vw;
+}
+
+.days hr{
+    border: none;
+    height: 0.15vh;
+    background: #DFDFDF;
 }
 
 .indicators{
@@ -314,7 +331,7 @@ a{
 }
 
 .calendar-item {
-    width: 26.04vw;
+    width: 26vw;
     height: 17vw;
     background: white;
     border-radius: 10px;
@@ -400,7 +417,8 @@ a{
 }
 
 .weather_name{
-    margin-left: 0.94vw;
+    margin-left: 1vw;
+    font-size: 1.2vw;
 }
 
 .weather_temp{
@@ -413,4 +431,140 @@ a{
 .weather_temp img{
     width: 2.6vw;
     margin-left: 1vw;
+}
+
+.schedule-of-classes{
+    border-radius: 5px;
+    height: 17vw;
+    background: white;
+    margin-top: 1.04vw;
+    padding: 1vw;
+}
+
+.schedule_header{
+    justify-content: space-between;
+}
+
+.schedule_date,.buildings_name {
+    font-size: 1.25vw;
+    font-weight: 900;
+}
+
+.number-week{
+    font-size: 1vw;
+    color: #91ABE0;
+}
+
+.schedule_body{
+    margin-top: 1.56vw;
+    font-size: 1vw;
+    line-height: 2.2;
+}
+
+.class{
+    justify-content: space-between;
+}
+
+.disc{
+    margin-left: 0.5vw;
+}
+
+.room{
+    color: #91ABE0;
+}
+
+.time-schedule{
+    width: 14vw;
+    height: 15.63vw;
+    background: white;
+    border-radius: 5px;
+}
+
+.time_header{
+    text-align: center;
+    background: #4b87ff;
+    color: white;
+    font-size: 1.2vw;
+    padding: 0.83vw;
+    border-radius: 5px;
+    height: 3.02vw;
+    align-items: center;
+}
+
+.time_header_Sat{
+    text-align: center;
+    background: #4b87ff;
+    color: white;
+    font-size: 1.2vw;
+    padding: 0.83vw;
+    border-radius: 5px;
+}
+
+.time{
+    justify-content: space-between;
+    padding: 0.3vw 1vw;
+}
+
+.time_schedule, .Saturdays_schedule{
+    padding: 1vw 0.3vw;
+    background: white;
+    border-radius: 5px;
+    font-size: 1vw;
+}
+
+.buildings, .dead-line{
+    width: 26vw;
+    height: 9vw;
+    background: white;
+    border-radius: 5px;
+    font-size: 1vw;
+    justify-content: space-between;
+    padding: 1vw;
+}
+
+.build{
+    justify-content: space-between;
+}
+
+.buildings_name{
+    margin-bottom: 1vw;
+}
+
+.Saturdays{
+    font-size: 1vw;
+}
+
+.Saturdays-time-schedule{
+    width: 14vw;
+    position: relative;
+    top: -5.5vw;
+}
+
+.hand-over-to{
+    font-size: 0.73vw;
+    color: #434343;
+    margin-bottom: 0.52vw;
+}
+
+.dead-line_date{
+    font-size: 1.04vw;
+    font-weight: 900;
+    margin-bottom: 0.3vw;
+}
+
+.dead_hr{
+    background: #4184F4;
+    width: 0.2vw;
+    height: 3vw;
+    margin-right: 1vw;
+}
+
+.topic{
+    font-weight: 600;
+    color: #434343;
+}
+
+.type-of-work{
+    font-size: 1vw;
+    font-weight: 600;
 }

@@ -22,7 +22,7 @@ use Yii;
  * @property Specialty $speciality
  * @property Teacher $teacher
  */
-class Schedule extends \yii\db\ActiveRecord
+class Schedule extends \yii\db\ActiveRecord implements \Countable
 {
     /**
      * {@inheritdoc}
@@ -105,5 +105,10 @@ class Schedule extends \yii\db\ActiveRecord
     public function getTeacher()
     {
         return $this->hasOne(Teacher::class, ['id' => 'teacher_id']);
+    }
+
+    public function count()
+    {
+        // TODO: Implement count() method.
     }
 }
